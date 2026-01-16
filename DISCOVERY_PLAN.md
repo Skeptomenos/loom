@@ -7,12 +7,12 @@
 
 | Category | Total | Discovered | Remaining | Progress |
 |----------|-------|------------|-----------|----------|
-| Architecture | 12 | 0 | 12 | 0% |
+| Architecture | 12 | 1 | 11 | 8% |
 | Patterns | 14 | 0 | 14 | 0% |
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| **Total** | **58** | **0** | **58** | **0%** |
+| **Total** | **58** | **1** | **57** | **2%** |
 
 ---
 
@@ -21,7 +21,7 @@
 Understanding the structural foundation before diving into details.
 
 ### Core System
-- [ ] What is the primary purpose of Loom? (AI-powered coding agent - but what specific workflows?)
+- [x] What is the primary purpose of Loom? (AI-powered coding agent - but what specific workflows?)
 - [ ] What are the main entry points? (loom-cli, loom-server, web frontend, TUI)
 - [ ] How does the server-side LLM proxy architecture work in practice?
 - [ ] What is the relationship between the 85+ crates and how are they organized?
@@ -146,6 +146,9 @@ The non-obvious things that only experience reveals.
 <!-- These are processed FIRST (depth-first exploration) -->
 <!-- Each discovery should add 1-2 follow-ups here -->
 
+- [ ] How does the Agent state machine handle concurrent tool executions and what happens when multiple tools are called in parallel?
+- [ ] What is the complete request flow from user input through the LLM proxy to tool execution and back?
+
 ---
 
 ## Discoveries Log
@@ -155,7 +158,7 @@ The non-obvious things that only experience reveals.
 
 | # | Question | Discovery File | Follow-ups | Status |
 |---|----------|----------------|------------|--------|
-| 1 | | | | |
+| 1 | What is the primary purpose of Loom? | [001-primary-purpose.md](discoveries/001-primary-purpose.md) | 2 | Complete |
 
 ---
 
