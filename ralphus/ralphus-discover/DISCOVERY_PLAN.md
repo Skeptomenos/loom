@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 27 | 15 | 12 | 56% |
-| **Total** | **69** | **16** | **53** | **23%** |
+| Follow-ups | 27 | 16 | 11 | 59% |
+| **Total** | **69** | **17** | **52** | **25%** |
 
 ---
 
@@ -105,7 +105,7 @@ The non-obvious things that only experience reveals.
 - [x] What is the thread system and how does it persist conversations?
 - [x] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
 - [x] How does the bash tool handle timeouts and output truncation?
-- [ ] How does the session management differ from OAuth state (persistence, expiry, revocation)?
+- [x] How does the session management differ from OAuth state (persistence, expiry, revocation)?
 - [ ] How does impersonation affect API key authentication vs session authentication?
 - [ ] How does the ABAC engine handle impersonation for organization/team-level permissions?
 - [ ] How does the retry backoff timing work for streaming errors? (exponential backoff, jitter?)
@@ -140,6 +140,7 @@ The non-obvious things that only experience reveals.
 | 14 | What is the thread system and how does it persist conversations? | 014-thread-system-persistence.md | 2 | Done |
 | 15 | How does path validation prevent traversal attacks? | 015-path-validation-traversal-prevention.md | 2 | Done |
 | 16 | How does the bash tool handle timeouts and output truncation? | 016-bash-tool-timeout-truncation.md | 2 | Done |
+| 17 | How does the session management differ from OAuth state? | 017-session-vs-oauth-state.md | 2 | Done |
 
 ---
 
