@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 33 | 19 | 14 | 58% |
-| **Total** | **91** | **20** | **71** | **22%** |
+| Follow-ups | 35 | 20 | 15 | 57% |
+| **Total** | **93** | **21** | **72** | **23%** |
 
 ---
 
@@ -166,7 +166,7 @@ The non-obvious things that only experience reveals.
 - [x] Should the Retry-After header be added to the HTTP response in addition to the message body?
 - [x] What would be the implementation complexity of adding parallel execution for read-only tool batches to the CLI?
 - [x] Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait for explicit classification?
-- [ ] Should the CLI parse the JSON error response to extract and display just the `message` field for cleaner user output?
+- [x] Should the CLI parse the JSON error response to extract and display just the `message` field for cleaner user output?
 - [ ] Would adding a `LlmError::ProviderNotConfigured` variant improve error handling and enable provider-specific guidance in the CLI?
 - [ ] Should the CLI query `/health` on startup to validate provider availability before attempting LLM requests?
 - [ ] Would a dedicated `/api/llm/capabilities` endpoint be valuable for exposing model lists, default mappings, and provider-specific features?
@@ -181,6 +181,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should parallel execution be gated behind a feature flag or CLI option for gradual rollout?
 - [ ] Should `ToolDefinition` be extended to include an `is_mutating` field so the LLM can be informed of tool characteristics?
 - [ ] Should there be additional classification methods like `is_network_bound()` to enable smarter execution strategies?
+- [ ] Should the `error` code field be included in the displayed message for certain error types (e.g., "conflict: Version mismatch...")?
+- [ ] Should the CLI implement a shared `parse_error_response()` helper function for use across WeaverClient, ProxyLlmClient, and future HTTP clients?
 
 ---
 
@@ -211,6 +213,7 @@ The non-obvious things that only experience reveals.
 | 18 | Should the Retry-After header be added to the HTTP response? | [018-retry-after-header-addition.md](discoveries/018-retry-after-header-addition.md) | 2 | Complete |
 | 19 | What would be the implementation complexity of adding parallel execution for read-only tool batches to the CLI? | [019-parallel-read-only-tool-implementation-complexity.md](discoveries/019-parallel-read-only-tool-implementation-complexity.md) | 2 | Complete |
 | 20 | Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait? | [020-tool-trait-is-mutating-method.md](discoveries/020-tool-trait-is-mutating-method.md) | 2 | Complete |
+| 21 | Should the CLI parse the JSON error response to extract and display just the message field? | [021-cli-json-error-parsing.md](discoveries/021-cli-json-error-parsing.md) | 2 | Complete |
 
 ---
 
