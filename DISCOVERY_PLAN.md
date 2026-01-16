@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 13 | 7 | 6 | 54% |
-| **Total** | **71** | **8** | **63** | **11%** |
+| Follow-ups | 15 | 8 | 7 | 53% |
+| **Total** | **73** | **9** | **64** | **12%** |
 
 ---
 
@@ -154,13 +154,15 @@ The non-obvious things that only experience reveals.
 - [x] How does the LlmService handle model resolution (e.g., mapping "default" to specific model versions) and what happens when a model is not available?
 - [x] How does the SSE error handling work when the connection drops mid-stream, and how does the client recover?
 - [x] How does the Agent determine the retry delay (what triggers RetryTimeoutFired), and is there exponential backoff at the agent level?
-- [ ] Could the ProxyLlmClient be enhanced to parse the Retry-After header for rate-limited responses to enable smarter retry timing?
+- [x] Could the ProxyLlmClient be enhanced to parse the Retry-After header for rate-limited responses to enable smarter retry timing?
 - [ ] What would be the performance impact of adding advisory file locks (flock) to edit_file and bash tools?
 - [ ] Are there any read-only tools that could be safely parallelized without any changes?
 - [ ] How does the CLI's ProxyLlmClient handle the 503 "provider not configured" error, and does it provide helpful user feedback?
 - [ ] Is there a mechanism for clients to discover which providers/models are available on a given server?
 - [ ] Should the CLI and ACP agent be updated to implement the retry timer, or is the current behavior (immediate failure/logging) intentional?
 - [ ] Would a shared "Agent runtime" abstraction be useful to encapsulate the retry timer logic for reuse across CLI, ACP, and future consumers?
+- [ ] Should the server return 429 instead of 503 for rate-limited responses to maintain semantic correctness?
+- [ ] Should the Retry-After header be added to the HTTP response in addition to the message body?
 
 ---
 
@@ -179,6 +181,7 @@ The non-obvious things that only experience reveals.
 | 6 | How does the LlmService handle model resolution? | [006-llm-service-model-resolution.md](discoveries/006-llm-service-model-resolution.md) | 2 | Complete |
 | 7 | How does the SSE error handling work when the connection drops mid-stream? | [007-sse-error-handling.md](discoveries/007-sse-error-handling.md) | 2 | Complete |
 | 8 | How does the Agent determine the retry delay (what triggers RetryTimeoutFired)? | [008-retry-timeout-mechanism.md](discoveries/008-retry-timeout-mechanism.md) | 2 | Complete |
+| 9 | Could the ProxyLlmClient be enhanced to parse the Retry-After header? | [009-proxy-llm-client-retry-after.md](discoveries/009-proxy-llm-client-retry-after.md) | 2 | Complete |
 
 ---
 
