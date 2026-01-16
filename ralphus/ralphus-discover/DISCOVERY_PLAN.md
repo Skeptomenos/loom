@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 12 | 5 | 7 | 42% |
-| **Total** | **54** | **6** | **48** | **11%** |
+| Follow-ups | 14 | 6 | 8 | 43% |
+| **Total** | **56** | **7** | **49** | **13%** |
 
 ---
 
@@ -95,7 +95,9 @@ The non-obvious things that only experience reveals.
 - [x] How does the tool execution system work? (ToolExecutionStatus lifecycle, parallel execution)
 - [x] How is the retry mechanism implemented for LLM errors?
 - [x] How does the OAuth pool failover work when quota is exceeded?
-- [ ] How does the admin API manage pool accounts at runtime?
+- [x] How does the admin API manage pool accounts at runtime?
+- [ ] How does the web UI (loom-web) integrate with admin endpoints?
+- [ ] How is the OAuth state store implemented for CSRF protection?
 - [ ] How does the OAuth system prompt requirement work for Claude Max?
 - [ ] How are streaming responses handled when errors occur mid-stream?
 - [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
@@ -118,6 +120,7 @@ The non-obvious things that only experience reveals.
 | 4 | How does the tool execution system work? | 004-tool-execution-system.md | 2 | Done |
 | 5 | How is the retry mechanism implemented for LLM errors? | 005-retry-mechanism.md | 2 | Done |
 | 6 | How does the OAuth pool failover work when quota is exceeded? | 006-oauth-pool-failover.md | 2 | Done |
+| 7 | How does the admin API manage pool accounts at runtime? | 007-admin-api-pool-management.md | 2 | Done |
 
 ---
 
