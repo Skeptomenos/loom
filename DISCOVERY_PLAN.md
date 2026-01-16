@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 20 | 12 | 8 | 60% |
-| **Total** | **78** | **13** | **65** | **17%** |
+| Follow-ups | 22 | 13 | 9 | 59% |
+| **Total** | **80** | **14** | **66** | **18%** |
 
 ---
 
@@ -159,7 +159,7 @@ The non-obvious things that only experience reveals.
 - [x] Are there any read-only tools that could be safely parallelized without any changes?
 - [x] Should a WorkspaceLockManager be implemented as a prerequisite for parallel tool execution?
 - [x] How does the CLI's ProxyLlmClient handle the 503 "provider not configured" error, and does it provide helpful user feedback?
-- [ ] Is there a mechanism for clients to discover which providers/models are available on a given server?
+- [x] Is there a mechanism for clients to discover which providers/models are available on a given server?
 - [ ] Should the CLI and ACP agent be updated to implement the retry timer, or is the current behavior (immediate failure/logging) intentional?
 - [ ] Would a shared "Agent runtime" abstraction be useful to encapsulate the retry timer logic for reuse across CLI, ACP, and future consumers?
 - [ ] Should the server return 429 instead of 503 for rate-limited responses to maintain semantic correctness?
@@ -168,6 +168,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait for explicit classification?
 - [ ] Should the CLI parse the JSON error response to extract and display just the `message` field for cleaner user output?
 - [ ] Would adding a `LlmError::ProviderNotConfigured` variant improve error handling and enable provider-specific guidance in the CLI?
+- [ ] Should the CLI query `/health` on startup to validate provider availability before attempting LLM requests?
+- [ ] Would a dedicated `/api/llm/capabilities` endpoint be valuable for exposing model lists, default mappings, and provider-specific features?
 
 ---
 
@@ -191,6 +193,7 @@ The non-obvious things that only experience reveals.
 | 11 | Are there any read-only tools that could be safely parallelized without any changes? | [011-read-only-tools-parallelization.md](discoveries/011-read-only-tools-parallelization.md) | 2 | Complete |
 | 12 | Should a WorkspaceLockManager be implemented as a prerequisite for parallel tool execution? | [012-workspace-lock-manager-analysis.md](discoveries/012-workspace-lock-manager-analysis.md) | 0 | Complete |
 | 13 | How does the CLI's ProxyLlmClient handle the 503 "provider not configured" error? | [013-proxy-llm-client-503-handling.md](discoveries/013-proxy-llm-client-503-handling.md) | 2 | Complete |
+| 14 | Is there a mechanism for clients to discover which providers/models are available on a given server? | [014-provider-model-discovery.md](discoveries/014-provider-model-discovery.md) | 2 | Complete |
 
 ---
 
