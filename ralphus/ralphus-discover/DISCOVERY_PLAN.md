@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 10 | 4 | 6 | 40% |
-| **Total** | **52** | **5** | **47** | **10%** |
+| Follow-ups | 12 | 5 | 7 | 42% |
+| **Total** | **54** | **6** | **48** | **11%** |
 
 ---
 
@@ -94,7 +94,9 @@ The non-obvious things that only experience reveals.
 - [x] What is the relationship between loom-core, loom-server, and loom-cli?
 - [x] How does the tool execution system work? (ToolExecutionStatus lifecycle, parallel execution)
 - [x] How is the retry mechanism implemented for LLM errors?
-- [ ] How does the OAuth pool failover work when quota is exceeded?
+- [x] How does the OAuth pool failover work when quota is exceeded?
+- [ ] How does the admin API manage pool accounts at runtime?
+- [ ] How does the OAuth system prompt requirement work for Claude Max?
 - [ ] How are streaming responses handled when errors occur mid-stream?
 - [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
 - [ ] What is the thread system and how does it persist conversations?
@@ -115,6 +117,7 @@ The non-obvious things that only experience reveals.
 | 3 | What is the relationship between loom-core, loom-server, and loom-cli? | 003-crate-relationships.md | 2 | Done |
 | 4 | How does the tool execution system work? | 004-tool-execution-system.md | 2 | Done |
 | 5 | How is the retry mechanism implemented for LLM errors? | 005-retry-mechanism.md | 2 | Done |
+| 6 | How does the OAuth pool failover work when quota is exceeded? | 006-oauth-pool-failover.md | 2 | Done |
 
 ---
 
