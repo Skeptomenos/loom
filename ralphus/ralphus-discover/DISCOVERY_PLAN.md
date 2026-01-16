@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 29 | 17 | 12 | 59% |
-| **Total** | **71** | **18** | **53** | **25%** |
+| Follow-ups | 31 | 18 | 13 | 58% |
+| **Total** | **73** | **19** | **54** | **26%** |
 
 ---
 
@@ -107,7 +107,7 @@ The non-obvious things that only experience reveals.
 - [x] How does the bash tool handle timeouts and output truncation?
 - [x] How does the session management differ from OAuth state (persistence, expiry, revocation)?
 - [x] How does impersonation affect API key authentication vs session authentication?
-- [ ] How does the ABAC engine handle impersonation for organization/team-level permissions?
+- [x] How does the ABAC engine handle impersonation for organization/team-level permissions?
 - [ ] How does the retry backoff timing work for streaming errors? (exponential backoff, jitter?)
 - [ ] How does the feature flag SSE client handle reconnection after errors?
 - [ ] How does the thread system persist conversations and integrate with the proxy?
@@ -116,6 +116,8 @@ The non-obvious things that only experience reveals.
 - [ ] How does the EBPF sandbox escape detection work in detail? (syscall monitoring, event types)
 - [ ] How does the web UI use impersonation state to modify its behavior when an admin is impersonating?
 - [ ] Why is `with_impersonation()` never called in production - is impersonation state meant to be client-side only?
+- [ ] How does the web UI display resources when an admin is impersonating - does it filter by the impersonated user's permissions or show everything?
+- [ ] Is there a permission debugging tool that allows admins to see what a specific user can access without impersonating?
 
 ---
 
@@ -144,6 +146,7 @@ The non-obvious things that only experience reveals.
 | 16 | How does the bash tool handle timeouts and output truncation? | 016-bash-tool-timeout-truncation.md | 2 | Done |
 | 17 | How does the session management differ from OAuth state? | 017-session-vs-oauth-state.md | 2 | Done |
 | 18 | How does impersonation affect API key auth vs session auth? | 018-impersonation-auth-types.md | 2 | Done |
+| 19 | How does the ABAC engine handle impersonation for org/team permissions? | 019-abac-impersonation-org-team.md | 2 | Done |
 
 ---
 
