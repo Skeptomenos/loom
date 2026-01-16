@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 25 | 13 | 12 | 52% |
-| **Total** | **67** | **14** | **53** | **21%** |
+| Follow-ups | 27 | 14 | 13 | 52% |
+| **Total** | **69** | **15** | **54** | **22%** |
 
 ---
 
@@ -103,7 +103,7 @@ The non-obvious things that only experience reveals.
 - [x] How are streaming responses handled when errors occur mid-stream?
 - [x] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
 - [x] What is the thread system and how does it persist conversations?
-- [ ] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
+- [x] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
 - [ ] How does the bash tool handle timeouts and output truncation?
 - [ ] How does the session management differ from OAuth state (persistence, expiry, revocation)?
 - [ ] How does impersonation affect API key authentication vs session authentication?
@@ -113,6 +113,7 @@ The non-obvious things that only experience reveals.
 - [ ] How does the thread system persist conversations and integrate with the proxy?
 - [ ] How do provider-specific stream parsers (e.g., AnthropicStream) handle partial tool calls and state accumulation?
 - [ ] How does the pending sync queue handle conflicts when the same thread is modified offline and online?
+- [ ] How does the EBPF sandbox escape detection work in detail? (syscall monitoring, event types)
 
 ---
 
@@ -137,6 +138,7 @@ The non-obvious things that only experience reveals.
 | 12 | How are streaming responses handled when errors occur mid-stream? | 012-streaming-error-handling.md | 2 | Done |
 | 13 | How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming) | 013-llm-proxy-pattern.md | 2 | Done |
 | 14 | What is the thread system and how does it persist conversations? | 014-thread-system-persistence.md | 2 | Done |
+| 15 | How does path validation prevent traversal attacks? | 015-path-validation-traversal-prevention.md | 2 | Done |
 
 ---
 
