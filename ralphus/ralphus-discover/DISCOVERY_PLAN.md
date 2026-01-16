@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 27 | 14 | 13 | 52% |
-| **Total** | **69** | **15** | **54** | **22%** |
+| Follow-ups | 27 | 15 | 12 | 56% |
+| **Total** | **69** | **16** | **53** | **23%** |
 
 ---
 
@@ -104,7 +104,7 @@ The non-obvious things that only experience reveals.
 - [x] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
 - [x] What is the thread system and how does it persist conversations?
 - [x] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
-- [ ] How does the bash tool handle timeouts and output truncation?
+- [x] How does the bash tool handle timeouts and output truncation?
 - [ ] How does the session management differ from OAuth state (persistence, expiry, revocation)?
 - [ ] How does impersonation affect API key authentication vs session authentication?
 - [ ] How does the ABAC engine handle impersonation for organization/team-level permissions?
@@ -139,6 +139,7 @@ The non-obvious things that only experience reveals.
 | 13 | How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming) | 013-llm-proxy-pattern.md | 2 | Done |
 | 14 | What is the thread system and how does it persist conversations? | 014-thread-system-persistence.md | 2 | Done |
 | 15 | How does path validation prevent traversal attacks? | 015-path-validation-traversal-prevention.md | 2 | Done |
+| 16 | How does the bash tool handle timeouts and output truncation? | 016-bash-tool-timeout-truncation.md | 2 | Done |
 
 ---
 
