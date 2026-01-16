@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 43 | 29 | 14 | 67% |
-| **Total** | **101** | **30** | **71** | **30%** |
+| Follow-ups | 45 | 30 | 15 | 67% |
+| **Total** | **103** | **31** | **72** | **30%** |
 
 ---
 
@@ -176,7 +176,7 @@ The non-obvious things that only experience reveals.
 - [x] What trait bounds should `AgentRuntime` require for maximum flexibility while maintaining type safety?
 - [x] Should the runtime be generic over the progress/callback mechanism, or use a fixed trait like `AgentRuntimeCallbacks`?
 - [x] What is the implementation complexity of adding a `ServerError::RateLimited` variant with `Retry-After` header support?
-- [ ] Should the `Retry-After` header use seconds (integer) or HTTP-date format for maximum compatibility?
+- [x] Should the `Retry-After` header use seconds (integer) or HTTP-date format for maximum compatibility?
 - [ ] Should the ErrorResponse struct be extended with an optional `retry_after_secs` field for explicit machine-readable retry timing in the body?
 - [ ] Should jitter be added to Retry-After values to prevent thundering herd retries?
 - [ ] Should the parallel execution logic be extracted into a shared crate (e.g., `loom-cli-tools` or a new `loom-tool-executor`)?
@@ -192,6 +192,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should there be a `CallbacksBuilder` for composing multiple callback implementations (e.g., logging + analytics)?
 - [ ] Should the `ErrorResponse` struct include an optional `retry_after_secs: Option<u64>` field for explicit machine-readable retry timing in the JSON body?
 - [ ] Should the rate-limiting implementation include jitter to prevent thundering herd retries?
+- [ ] Should there be a maximum cap on `retry_after_secs` values (e.g., 3600 or 86400 seconds) to prevent unreasonably long waits?
+- [ ] Should the server log a warning if upstream providers return HTTP-date format instead of seconds?
 
 ---
 
@@ -232,6 +234,7 @@ The non-obvious things that only experience reveals.
 | 28 | What trait bounds should `AgentRuntime` require for maximum flexibility? | [028-agent-runtime-trait-bounds.md](discoveries/028-agent-runtime-trait-bounds.md) | 2 | Complete |
 | 29 | Should the runtime be generic over the callback mechanism or use a fixed trait? | [029-runtime-callback-mechanism-design.md](discoveries/029-runtime-callback-mechanism-design.md) | 2 | Complete |
 | 30 | What is the implementation complexity of adding ServerError::RateLimited with Retry-After? | [030-servererror-ratelimited-implementation-complexity.md](discoveries/030-servererror-ratelimited-implementation-complexity.md) | 2 | Complete |
+| 31 | Should the Retry-After header use seconds or HTTP-date format? | [031-retry-after-header-format.md](discoveries/031-retry-after-header-format.md) | 2 | Complete |
 
 ---
 
