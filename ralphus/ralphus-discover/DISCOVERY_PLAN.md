@@ -12,7 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| **Total** | **42** | **1** | **41** | **2%** |
+| Follow-ups | 4 | 1 | 3 | 25% |
+| **Total** | **46** | **2** | **44** | **4%** |
 
 ---
 
@@ -89,8 +90,10 @@ The non-obvious things that only experience reveals.
 <!-- These are processed FIRST (depth-first exploration) -->
 <!-- Each discovery should add 1-2 follow-ups here -->
 
-- [ ] How does the state machine orchestrate conversation flow and tool execution?
+- [x] How does the state machine orchestrate conversation flow and tool execution?
 - [ ] What is the relationship between loom-core, loom-server, and loom-cli?
+- [ ] How does the tool execution system work? (ToolExecutionStatus lifecycle, parallel execution)
+- [ ] How is the retry mechanism implemented for LLM errors?
 
 ---
 
@@ -102,6 +105,7 @@ The non-obvious things that only experience reveals.
 | # | Question | Discovery File | Follow-ups | Status |
 |---|----------|----------------|------------|--------|
 | 1 | What is the primary purpose of this codebase? | 001-primary-purpose.md | 2 | Done |
+| 2 | How does the state machine orchestrate conversation flow and tool execution? | 002-state-machine-orchestration.md | 2 | Done |
 
 ---
 
