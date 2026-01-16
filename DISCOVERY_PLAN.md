@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 49 | 33 | 16 | 67% |
-| **Total** | **107** | **34** | **73** | **32%** |
+| Follow-ups | 51 | 34 | 17 | 67% |
+| **Total** | **109** | **35** | **74** | **32%** |
 
 ---
 
@@ -180,7 +180,7 @@ The non-obvious things that only experience reveals.
 - [x] Should the ErrorResponse struct be extended with an optional `retry_after_secs` field for explicit machine-readable retry timing in the body?
 - [x] Should jitter be added to Retry-After values to prevent thundering herd retries?
 - [x] Should the parallel execution logic be extracted into a shared crate (e.g., `loom-cli-tools` or a new `loom-tool-executor`)?
-- [ ] Should parallel execution be gated behind a feature flag or CLI option for gradual rollout?
+- [x] Should parallel execution be gated behind a feature flag or CLI option for gradual rollout?
 - [ ] Should `ToolDefinition` be extended to include an `is_mutating` field so the LLM can be informed of tool characteristics?
 - [ ] Should there be additional classification methods like `is_network_bound()` to enable smarter execution strategies?
 - [ ] Should the `error` code field be included in the displayed message for certain error types (e.g., "conflict: Version mismatch...")?
@@ -200,6 +200,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should server-side jitter use a configurable range (e.g., via environment variable) or a fixed ±15% factor?
 - [ ] Should the `ToolExecutor` support configurable concurrency limits (e.g., max 4 parallel read-only tools) to prevent resource exhaustion?
 - [ ] Should execution metrics (timing, success/failure counts) be collected at the executor level for observability?
+- [ ] Should the CLI log a message when parallel execution is enabled (e.g., "Parallel tool execution enabled (experimental)")?
+- [ ] Should there be a `--parallel-tools-max-concurrency N` option to limit the number of concurrent read-only tools?
 
 ---
 
@@ -244,6 +246,7 @@ The non-obvious things that only experience reveals.
 | 32 | Should ErrorResponse be extended with retry_after_secs field? | [032-errorresponse-retry-after-field.md](discoveries/032-errorresponse-retry-after-field.md) | 2 | Complete |
 | 33 | Should jitter be added to Retry-After values to prevent thundering herd retries? | [033-jitter-for-retry-after-values.md](discoveries/033-jitter-for-retry-after-values.md) | 2 | Complete |
 | 34 | Should the parallel execution logic be extracted into a shared crate? | [034-parallel-execution-shared-crate.md](discoveries/034-parallel-execution-shared-crate.md) | 2 | Complete |
+| 35 | Should parallel execution be gated behind a feature flag or CLI option? | [035-parallel-execution-feature-flag.md](discoveries/035-parallel-execution-feature-flag.md) | 2 | Complete |
 
 ---
 
