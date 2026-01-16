@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 31 | 18 | 13 | 58% |
-| **Total** | **89** | **19** | **70** | **21%** |
+| Follow-ups | 33 | 19 | 14 | 58% |
+| **Total** | **91** | **20** | **71** | **22%** |
 
 ---
 
@@ -165,7 +165,7 @@ The non-obvious things that only experience reveals.
 - [x] Should the server return 429 instead of 503 for rate-limited responses to maintain semantic correctness?
 - [x] Should the Retry-After header be added to the HTTP response in addition to the message body?
 - [x] What would be the implementation complexity of adding parallel execution for read-only tool batches to the CLI?
-- [ ] Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait for explicit classification?
+- [x] Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait for explicit classification?
 - [ ] Should the CLI parse the JSON error response to extract and display just the `message` field for cleaner user output?
 - [ ] Would adding a `LlmError::ProviderNotConfigured` variant improve error handling and enable provider-specific guidance in the CLI?
 - [ ] Should the CLI query `/health` on startup to validate provider availability before attempting LLM requests?
@@ -179,6 +179,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should jitter be added to Retry-After values to prevent thundering herd retries?
 - [ ] Should the parallel execution logic be extracted into a shared crate (e.g., `loom-cli-tools` or a new `loom-tool-executor`)?
 - [ ] Should parallel execution be gated behind a feature flag or CLI option for gradual rollout?
+- [ ] Should `ToolDefinition` be extended to include an `is_mutating` field so the LLM can be informed of tool characteristics?
+- [ ] Should there be additional classification methods like `is_network_bound()` to enable smarter execution strategies?
 
 ---
 
@@ -208,6 +210,7 @@ The non-obvious things that only experience reveals.
 | 17 | Should the server return 429 instead of 503 for rate-limited responses? | [017-http-429-vs-503-rate-limiting.md](discoveries/017-http-429-vs-503-rate-limiting.md) | 2 | Complete |
 | 18 | Should the Retry-After header be added to the HTTP response? | [018-retry-after-header-addition.md](discoveries/018-retry-after-header-addition.md) | 2 | Complete |
 | 19 | What would be the implementation complexity of adding parallel execution for read-only tool batches to the CLI? | [019-parallel-read-only-tool-implementation-complexity.md](discoveries/019-parallel-read-only-tool-implementation-complexity.md) | 2 | Complete |
+| 20 | Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait? | [020-tool-trait-is-mutating-method.md](discoveries/020-tool-trait-is-mutating-method.md) | 2 | Complete |
 
 ---
 
