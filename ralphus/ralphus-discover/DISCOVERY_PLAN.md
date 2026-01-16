@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 15 | 7 | 8 | 47% |
-| **Total** | **57** | **8** | **49** | **14%** |
+| Follow-ups | 16 | 8 | 8 | 50% |
+| **Total** | **58** | **9** | **49** | **16%** |
 
 ---
 
@@ -97,7 +97,7 @@ The non-obvious things that only experience reveals.
 - [x] How does the OAuth pool failover work when quota is exceeded?
 - [x] How does the admin API manage pool accounts at runtime?
 - [x] How does the web UI (loom-web) integrate with admin endpoints?
-- [ ] How is the OAuth state store implemented for CSRF protection?
+- [x] How is the OAuth state store implemented for CSRF protection?
 - [ ] How does the impersonation system work end-to-end?
 - [ ] How does the OAuth system prompt requirement work for Claude Max?
 - [ ] How are streaming responses handled when errors occur mid-stream?
@@ -105,6 +105,7 @@ The non-obvious things that only experience reveals.
 - [ ] What is the thread system and how does it persist conversations?
 - [ ] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
 - [ ] How does the bash tool handle timeouts and output truncation?
+- [ ] How does the session management differ from OAuth state (persistence, expiry, revocation)?
 
 ---
 
@@ -123,6 +124,7 @@ The non-obvious things that only experience reveals.
 | 6 | How does the OAuth pool failover work when quota is exceeded? | 006-oauth-pool-failover.md | 2 | Done |
 | 7 | How does the admin API manage pool accounts at runtime? | 007-admin-api-pool-management.md | 2 | Done |
 | 8 | How does the web UI (loom-web) integrate with admin endpoints? | 008-web-ui-admin-integration.md | 2 | Done |
+| 9 | How is the OAuth state store implemented for CSRF protection? | 009-oauth-state-store-csrf.md | 2 | Done |
 
 ---
 
