@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 14 | 6 | 8 | 43% |
-| **Total** | **56** | **7** | **49** | **13%** |
+| Follow-ups | 15 | 7 | 8 | 47% |
+| **Total** | **57** | **8** | **49** | **14%** |
 
 ---
 
@@ -96,8 +96,9 @@ The non-obvious things that only experience reveals.
 - [x] How is the retry mechanism implemented for LLM errors?
 - [x] How does the OAuth pool failover work when quota is exceeded?
 - [x] How does the admin API manage pool accounts at runtime?
-- [ ] How does the web UI (loom-web) integrate with admin endpoints?
+- [x] How does the web UI (loom-web) integrate with admin endpoints?
 - [ ] How is the OAuth state store implemented for CSRF protection?
+- [ ] How does the impersonation system work end-to-end?
 - [ ] How does the OAuth system prompt requirement work for Claude Max?
 - [ ] How are streaming responses handled when errors occur mid-stream?
 - [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
@@ -121,6 +122,7 @@ The non-obvious things that only experience reveals.
 | 5 | How is the retry mechanism implemented for LLM errors? | 005-retry-mechanism.md | 2 | Done |
 | 6 | How does the OAuth pool failover work when quota is exceeded? | 006-oauth-pool-failover.md | 2 | Done |
 | 7 | How does the admin API manage pool accounts at runtime? | 007-admin-api-pool-management.md | 2 | Done |
+| 8 | How does the web UI (loom-web) integrate with admin endpoints? | 008-web-ui-admin-integration.md | 2 | Done |
 
 ---
 
