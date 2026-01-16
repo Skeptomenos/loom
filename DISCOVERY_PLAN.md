@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 47 | 31 | 16 | 66% |
-| **Total** | **105** | **32** | **73** | **30%** |
+| Follow-ups | 49 | 32 | 17 | 65% |
+| **Total** | **107** | **33** | **74** | **31%** |
 
 ---
 
@@ -178,7 +178,7 @@ The non-obvious things that only experience reveals.
 - [x] What is the implementation complexity of adding a `ServerError::RateLimited` variant with `Retry-After` header support?
 - [x] Should the `Retry-After` header use seconds (integer) or HTTP-date format for maximum compatibility?
 - [x] Should the ErrorResponse struct be extended with an optional `retry_after_secs` field for explicit machine-readable retry timing in the body?
-- [ ] Should jitter be added to Retry-After values to prevent thundering herd retries?
+- [x] Should jitter be added to Retry-After values to prevent thundering herd retries?
 - [ ] Should the parallel execution logic be extracted into a shared crate (e.g., `loom-cli-tools` or a new `loom-tool-executor`)?
 - [ ] Should parallel execution be gated behind a feature flag or CLI option for gradual rollout?
 - [ ] Should `ToolDefinition` be extended to include an `is_mutating` field so the LLM can be informed of tool characteristics?
@@ -196,6 +196,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should the server log a warning if upstream providers return HTTP-date format instead of seconds?
 - [ ] Should the `ApiErrorResponse` trait and `impl_api_error_response!` macro be updated to support `retry_after_secs` for domain-specific error types?
 - [ ] Should clients implement a fallback strategy that checks the JSON body's `retry_after_secs` when the `Retry-After` header is missing?
+- [ ] Should the job scheduler (`loom-server-jobs`) and webhook retry logic add jitter to their exponential backoff for consistency?
+- [ ] Should server-side jitter use a configurable range (e.g., via environment variable) or a fixed ±15% factor?
 
 ---
 
@@ -238,6 +240,7 @@ The non-obvious things that only experience reveals.
 | 30 | What is the implementation complexity of adding ServerError::RateLimited with Retry-After? | [030-servererror-ratelimited-implementation-complexity.md](discoveries/030-servererror-ratelimited-implementation-complexity.md) | 2 | Complete |
 | 31 | Should the Retry-After header use seconds or HTTP-date format? | [031-retry-after-header-format.md](discoveries/031-retry-after-header-format.md) | 2 | Complete |
 | 32 | Should ErrorResponse be extended with retry_after_secs field? | [032-errorresponse-retry-after-field.md](discoveries/032-errorresponse-retry-after-field.md) | 2 | Complete |
+| 33 | Should jitter be added to Retry-After values to prevent thundering herd retries? | [033-jitter-for-retry-after-values.md](discoveries/033-jitter-for-retry-after-values.md) | 2 | Complete |
 
 ---
 
