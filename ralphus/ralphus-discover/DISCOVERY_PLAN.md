@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 22 | 11 | 11 | 50% |
-| **Total** | **64** | **12** | **52** | **19%** |
+| Follow-ups | 24 | 12 | 12 | 50% |
+| **Total** | **66** | **13** | **53** | **20%** |
 
 ---
 
@@ -101,7 +101,7 @@ The non-obvious things that only experience reveals.
 - [x] How does the impersonation system work end-to-end?
 - [x] How does the OAuth system prompt requirement work for Claude Max?
 - [x] How are streaming responses handled when errors occur mid-stream?
-- [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
+- [x] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
 - [ ] What is the thread system and how does it persist conversations?
 - [ ] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
 - [ ] How does the bash tool handle timeouts and output truncation?
@@ -110,6 +110,8 @@ The non-obvious things that only experience reveals.
 - [ ] How does the ABAC engine handle impersonation for organization/team-level permissions?
 - [ ] How does the retry backoff timing work for streaming errors? (exponential backoff, jitter?)
 - [ ] How does the feature flag SSE client handle reconnection after errors?
+- [ ] How does the thread system persist conversations and integrate with the proxy?
+- [ ] How do provider-specific stream parsers (e.g., AnthropicStream) handle partial tool calls and state accumulation?
 
 ---
 
@@ -132,6 +134,7 @@ The non-obvious things that only experience reveals.
 | 10 | How does the impersonation system work end-to-end? | 010-impersonation-system.md | 2 | Done |
 | 11 | How does the OAuth system prompt requirement work for Claude Max? | 011-oauth-system-prompt-requirement.md | 2 | Done |
 | 12 | How are streaming responses handled when errors occur mid-stream? | 012-streaming-error-handling.md | 2 | Done |
+| 13 | How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming) | 013-llm-proxy-pattern.md | 2 | Done |
 
 ---
 
