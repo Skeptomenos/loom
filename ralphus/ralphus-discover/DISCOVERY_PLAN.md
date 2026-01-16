@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 27 | 16 | 11 | 59% |
-| **Total** | **69** | **17** | **52** | **25%** |
+| Follow-ups | 29 | 17 | 12 | 59% |
+| **Total** | **71** | **18** | **53** | **25%** |
 
 ---
 
@@ -106,7 +106,7 @@ The non-obvious things that only experience reveals.
 - [x] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
 - [x] How does the bash tool handle timeouts and output truncation?
 - [x] How does the session management differ from OAuth state (persistence, expiry, revocation)?
-- [ ] How does impersonation affect API key authentication vs session authentication?
+- [x] How does impersonation affect API key authentication vs session authentication?
 - [ ] How does the ABAC engine handle impersonation for organization/team-level permissions?
 - [ ] How does the retry backoff timing work for streaming errors? (exponential backoff, jitter?)
 - [ ] How does the feature flag SSE client handle reconnection after errors?
@@ -114,6 +114,8 @@ The non-obvious things that only experience reveals.
 - [ ] How do provider-specific stream parsers (e.g., AnthropicStream) handle partial tool calls and state accumulation?
 - [ ] How does the pending sync queue handle conflicts when the same thread is modified offline and online?
 - [ ] How does the EBPF sandbox escape detection work in detail? (syscall monitoring, event types)
+- [ ] How does the web UI use impersonation state to modify its behavior when an admin is impersonating?
+- [ ] Why is `with_impersonation()` never called in production - is impersonation state meant to be client-side only?
 
 ---
 
@@ -141,6 +143,7 @@ The non-obvious things that only experience reveals.
 | 15 | How does path validation prevent traversal attacks? | 015-path-validation-traversal-prevention.md | 2 | Done |
 | 16 | How does the bash tool handle timeouts and output truncation? | 016-bash-tool-timeout-truncation.md | 2 | Done |
 | 17 | How does the session management differ from OAuth state? | 017-session-vs-oauth-state.md | 2 | Done |
+| 18 | How does impersonation affect API key auth vs session auth? | 018-impersonation-auth-types.md | 2 | Done |
 
 ---
 
