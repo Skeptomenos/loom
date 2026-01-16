@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 10 | 5 | 5 | 50% |
-| **Total** | **68** | **6** | **62** | **9%** |
+| Follow-ups | 11 | 6 | 5 | 55% |
+| **Total** | **69** | **7** | **62** | **10%** |
 
 ---
 
@@ -152,7 +152,9 @@ The non-obvious things that only experience reveals.
 - [x] Why was sequential execution chosen over parallel in the CLI implementations? Are there specific race conditions or ordering concerns with file-modifying tools?
 - [x] How does the PostToolsHook auto-commit feature work, and what determines if a commit should be made?
 - [x] How does the LlmService handle model resolution (e.g., mapping "default" to specific model versions) and what happens when a model is not available?
-- [ ] How does the SSE error handling work when the connection drops mid-stream, and how does the client recover?
+- [x] How does the SSE error handling work when the connection drops mid-stream, and how does the client recover?
+- [ ] How does the Agent determine the retry delay (what triggers RetryTimeoutFired), and is there exponential backoff at the agent level?
+- [ ] Could the ProxyLlmClient be enhanced to parse the Retry-After header for rate-limited responses to enable smarter retry timing?
 - [ ] What would be the performance impact of adding advisory file locks (flock) to edit_file and bash tools?
 - [ ] Are there any read-only tools that could be safely parallelized without any changes?
 - [ ] How does the CLI's ProxyLlmClient handle the 503 "provider not configured" error, and does it provide helpful user feedback?
@@ -173,6 +175,7 @@ The non-obvious things that only experience reveals.
 | 4 | Why was sequential execution chosen over parallel in the CLI implementations? | [004-sequential-execution-rationale.md](discoveries/004-sequential-execution-rationale.md) | 2 | Complete |
 | 5 | How does the PostToolsHook auto-commit feature work? | [005-post-tools-hook-auto-commit.md](discoveries/005-post-tools-hook-auto-commit.md) | 2 | Complete |
 | 6 | How does the LlmService handle model resolution? | [006-llm-service-model-resolution.md](discoveries/006-llm-service-model-resolution.md) | 2 | Complete |
+| 7 | How does the SSE error handling work when the connection drops mid-stream? | [007-sse-error-handling.md](discoveries/007-sse-error-handling.md) | 2 | Complete |
 
 ---
 
