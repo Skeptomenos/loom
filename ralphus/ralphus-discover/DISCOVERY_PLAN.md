@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 18 | 9 | 9 | 50% |
-| **Total** | **60** | **10** | **50** | **17%** |
+| Follow-ups | 20 | 10 | 10 | 50% |
+| **Total** | **62** | **11** | **51** | **18%** |
 
 ---
 
@@ -99,7 +99,7 @@ The non-obvious things that only experience reveals.
 - [x] How does the web UI (loom-web) integrate with admin endpoints?
 - [x] How is the OAuth state store implemented for CSRF protection?
 - [x] How does the impersonation system work end-to-end?
-- [ ] How does the OAuth system prompt requirement work for Claude Max?
+- [x] How does the OAuth system prompt requirement work for Claude Max?
 - [ ] How are streaming responses handled when errors occur mid-stream?
 - [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
 - [ ] What is the thread system and how does it persist conversations?
@@ -128,6 +128,7 @@ The non-obvious things that only experience reveals.
 | 8 | How does the web UI (loom-web) integrate with admin endpoints? | 008-web-ui-admin-integration.md | 2 | Done |
 | 9 | How is the OAuth state store implemented for CSRF protection? | 009-oauth-state-store-csrf.md | 2 | Done |
 | 10 | How does the impersonation system work end-to-end? | 010-impersonation-system.md | 2 | Done |
+| 11 | How does the OAuth system prompt requirement work for Claude Max? | 011-oauth-system-prompt-requirement.md | 2 | Done |
 
 ---
 
