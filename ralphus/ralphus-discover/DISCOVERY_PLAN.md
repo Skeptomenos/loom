@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 16 | 8 | 8 | 50% |
-| **Total** | **58** | **9** | **49** | **16%** |
+| Follow-ups | 18 | 9 | 9 | 50% |
+| **Total** | **60** | **10** | **50** | **17%** |
 
 ---
 
@@ -98,7 +98,7 @@ The non-obvious things that only experience reveals.
 - [x] How does the admin API manage pool accounts at runtime?
 - [x] How does the web UI (loom-web) integrate with admin endpoints?
 - [x] How is the OAuth state store implemented for CSRF protection?
-- [ ] How does the impersonation system work end-to-end?
+- [x] How does the impersonation system work end-to-end?
 - [ ] How does the OAuth system prompt requirement work for Claude Max?
 - [ ] How are streaming responses handled when errors occur mid-stream?
 - [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
@@ -106,6 +106,8 @@ The non-obvious things that only experience reveals.
 - [ ] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
 - [ ] How does the bash tool handle timeouts and output truncation?
 - [ ] How does the session management differ from OAuth state (persistence, expiry, revocation)?
+- [ ] How does impersonation affect API key authentication vs session authentication?
+- [ ] How does the ABAC engine handle impersonation for organization/team-level permissions?
 
 ---
 
@@ -125,6 +127,7 @@ The non-obvious things that only experience reveals.
 | 7 | How does the admin API manage pool accounts at runtime? | 007-admin-api-pool-management.md | 2 | Done |
 | 8 | How does the web UI (loom-web) integrate with admin endpoints? | 008-web-ui-admin-integration.md | 2 | Done |
 | 9 | How is the OAuth state store implemented for CSRF protection? | 009-oauth-state-store-csrf.md | 2 | Done |
+| 10 | How does the impersonation system work end-to-end? | 010-impersonation-system.md | 2 | Done |
 
 ---
 
