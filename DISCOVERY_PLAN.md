@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 22 | 13 | 9 | 59% |
-| **Total** | **80** | **14** | **66** | **18%** |
+| Follow-ups | 23 | 14 | 9 | 61% |
+| **Total** | **81** | **15** | **66** | **19%** |
 
 ---
 
@@ -160,7 +160,7 @@ The non-obvious things that only experience reveals.
 - [x] Should a WorkspaceLockManager be implemented as a prerequisite for parallel tool execution?
 - [x] How does the CLI's ProxyLlmClient handle the 503 "provider not configured" error, and does it provide helpful user feedback?
 - [x] Is there a mechanism for clients to discover which providers/models are available on a given server?
-- [ ] Should the CLI and ACP agent be updated to implement the retry timer, or is the current behavior (immediate failure/logging) intentional?
+- [x] Should the CLI and ACP agent be updated to implement the retry timer, or is the current behavior (immediate failure/logging) intentional?
 - [ ] Would a shared "Agent runtime" abstraction be useful to encapsulate the retry timer logic for reuse across CLI, ACP, and future consumers?
 - [ ] Should the server return 429 instead of 503 for rate-limited responses to maintain semantic correctness?
 - [ ] Should the Retry-After header be added to the HTTP response in addition to the message body?
@@ -170,6 +170,7 @@ The non-obvious things that only experience reveals.
 - [ ] Would adding a `LlmError::ProviderNotConfigured` variant improve error handling and enable provider-specific guidance in the CLI?
 - [ ] Should the CLI query `/health` on startup to validate provider availability before attempting LLM requests?
 - [ ] Would a dedicated `/api/llm/capabilities` endpoint be valuable for exposing model lists, default mappings, and provider-specific features?
+- [ ] What is the expected user experience during a retry wait? Should the CLI show a spinner or countdown?
 
 ---
 
@@ -194,6 +195,7 @@ The non-obvious things that only experience reveals.
 | 12 | Should a WorkspaceLockManager be implemented as a prerequisite for parallel tool execution? | [012-workspace-lock-manager-analysis.md](discoveries/012-workspace-lock-manager-analysis.md) | 0 | Complete |
 | 13 | How does the CLI's ProxyLlmClient handle the 503 "provider not configured" error? | [013-proxy-llm-client-503-handling.md](discoveries/013-proxy-llm-client-503-handling.md) | 2 | Complete |
 | 14 | Is there a mechanism for clients to discover which providers/models are available on a given server? | [014-provider-model-discovery.md](discoveries/014-provider-model-discovery.md) | 2 | Complete |
+| 15 | Should the CLI and ACP agent be updated to implement the retry timer? | [015-cli-acp-retry-timer-intentionality.md](discoveries/015-cli-acp-retry-timer-intentionality.md) | 2 | Complete |
 
 ---
 
