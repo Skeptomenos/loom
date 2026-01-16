@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 18 | 10 | 8 | 56% |
-| **Total** | **76** | **11** | **65** | **14%** |
+| Follow-ups | 18 | 11 | 7 | 61% |
+| **Total** | **76** | **12** | **64** | **16%** |
 
 ---
 
@@ -157,7 +157,7 @@ The non-obvious things that only experience reveals.
 - [x] Could the ProxyLlmClient be enhanced to parse the Retry-After header for rate-limited responses to enable smarter retry timing?
 - [x] What would be the performance impact of adding advisory file locks (flock) to edit_file and bash tools?
 - [x] Are there any read-only tools that could be safely parallelized without any changes?
-- [ ] Should a WorkspaceLockManager be implemented as a prerequisite for parallel tool execution?
+- [x] Should a WorkspaceLockManager be implemented as a prerequisite for parallel tool execution?
 - [ ] How does the CLI's ProxyLlmClient handle the 503 "provider not configured" error, and does it provide helpful user feedback?
 - [ ] Is there a mechanism for clients to discover which providers/models are available on a given server?
 - [ ] Should the CLI and ACP agent be updated to implement the retry timer, or is the current behavior (immediate failure/logging) intentional?
@@ -187,6 +187,7 @@ The non-obvious things that only experience reveals.
 | 9 | Could the ProxyLlmClient be enhanced to parse the Retry-After header? | [009-proxy-llm-client-retry-after.md](discoveries/009-proxy-llm-client-retry-after.md) | 2 | Complete |
 | 10 | What would be the performance impact of adding advisory file locks (flock) to edit_file and bash tools? | [010-flock-performance-impact.md](discoveries/010-flock-performance-impact.md) | 2 | Complete |
 | 11 | Are there any read-only tools that could be safely parallelized without any changes? | [011-read-only-tools-parallelization.md](discoveries/011-read-only-tools-parallelization.md) | 2 | Complete |
+| 12 | Should a WorkspaceLockManager be implemented as a prerequisite for parallel tool execution? | [012-workspace-lock-manager-analysis.md](discoveries/012-workspace-lock-manager-analysis.md) | 0 | Complete |
 
 ---
 
