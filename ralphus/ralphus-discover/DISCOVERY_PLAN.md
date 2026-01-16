@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 6 | 2 | 4 | 33% |
-| **Total** | **48** | **3** | **45** | **6%** |
+| Follow-ups | 8 | 3 | 5 | 38% |
+| **Total** | **50** | **4** | **46** | **8%** |
 
 ---
 
@@ -92,10 +92,12 @@ The non-obvious things that only experience reveals.
 
 - [x] How does the state machine orchestrate conversation flow and tool execution?
 - [x] What is the relationship between loom-core, loom-server, and loom-cli?
-- [ ] How does the tool execution system work? (ToolExecutionStatus lifecycle, parallel execution)
+- [x] How does the tool execution system work? (ToolExecutionStatus lifecycle, parallel execution)
 - [ ] How is the retry mechanism implemented for LLM errors?
 - [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
 - [ ] What is the thread system and how does it persist conversations?
+- [ ] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
+- [ ] How does the bash tool handle timeouts and output truncation?
 
 ---
 
@@ -109,6 +111,7 @@ The non-obvious things that only experience reveals.
 | 1 | What is the primary purpose of this codebase? | 001-primary-purpose.md | 2 | Done |
 | 2 | How does the state machine orchestrate conversation flow and tool execution? | 002-state-machine-orchestration.md | 2 | Done |
 | 3 | What is the relationship between loom-core, loom-server, and loom-cli? | 003-crate-relationships.md | 2 | Done |
+| 4 | How does the tool execution system work? | 004-tool-execution-system.md | 2 | Done |
 
 ---
 
