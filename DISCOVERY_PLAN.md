@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 37 | 25 | 12 | 68% |
-| **Total** | **95** | **26** | **69** | **27%** |
+| Follow-ups | 37 | 26 | 11 | 70% |
+| **Total** | **95** | **27** | **68** | **28%** |
 
 ---
 
@@ -172,7 +172,7 @@ The non-obvious things that only experience reveals.
 - [x] Would a dedicated `/api/llm/capabilities` endpoint be valuable for exposing model lists, default mappings, and provider-specific features?
 - [x] What is the expected user experience during a retry wait? Should the CLI show a spinner or countdown?
 - [x] Should the CLI support cancelling a retry wait with Ctrl+C, or should it always complete the countdown?
-- [ ] Should the TUI implement a dedicated `CountdownWidget` or extend the existing `Spinner` to support countdown mode?
+- [x] Should the TUI implement a dedicated `CountdownWidget` or extend the existing `Spinner` to support countdown mode?
 - [ ] What trait bounds should `AgentRuntime` require for maximum flexibility while maintaining type safety?
 - [ ] Should the runtime be generic over the progress/callback mechanism, or use a fixed trait like `AgentRuntimeCallbacks`?
 - [ ] What is the implementation complexity of adding a `ServerError::RateLimited` variant with `Retry-After` header support?
@@ -222,6 +222,7 @@ The non-obvious things that only experience reveals.
 | 24 | Would a dedicated `/api/llm/capabilities` endpoint be valuable? | [024-llm-capabilities-endpoint-value.md](discoveries/024-llm-capabilities-endpoint-value.md) | 1 | Complete |
 | 25 | What is the expected user experience during a retry wait? | [025-cli-retry-wait-ux.md](discoveries/025-cli-retry-wait-ux.md) | 2 | Complete |
 | 26 | Should the CLI support cancelling a retry wait with Ctrl+C? | [026-cli-retry-wait-cancellation.md](discoveries/026-cli-retry-wait-cancellation.md) | 0 | Complete |
+| 27 | Should the TUI implement a dedicated `CountdownWidget` or extend the existing `Spinner`? | [027-tui-countdown-widget-vs-spinner-extension.md](discoveries/027-tui-countdown-widget-vs-spinner-extension.md) | 0 | Complete |
 
 ---
 
