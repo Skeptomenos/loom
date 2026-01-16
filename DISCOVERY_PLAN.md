@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 4 | 1 | 3 | 25% |
-| **Total** | **62** | **2** | **60** | **3%** |
+| Follow-ups | 6 | 2 | 4 | 33% |
+| **Total** | **64** | **3** | **61** | **5%** |
 
 ---
 
@@ -148,9 +148,11 @@ The non-obvious things that only experience reveals.
 <!-- Each discovery should add 1-2 follow-ups here -->
 
 - [x] How does the Agent state machine handle concurrent tool executions and what happens when multiple tools are called in parallel?
-- [ ] What is the complete request flow from user input through the LLM proxy to tool execution and back?
+- [x] What is the complete request flow from user input through the LLM proxy to tool execution and back?
 - [ ] Why was sequential execution chosen over parallel in the CLI implementations? Are there specific race conditions or ordering concerns with file-modifying tools?
 - [ ] How does the PostToolsHook auto-commit feature work, and what determines if a commit should be made?
+- [ ] How does the LlmService handle model resolution (e.g., mapping "default" to specific model versions) and what happens when a model is not available?
+- [ ] How does the SSE error handling work when the connection drops mid-stream, and how does the client recover?
 
 ---
 
@@ -163,6 +165,7 @@ The non-obvious things that only experience reveals.
 |---|----------|----------------|------------|--------|
 | 1 | What is the primary purpose of Loom? | [001-primary-purpose.md](discoveries/001-primary-purpose.md) | 2 | Complete |
 | 2 | How does the Agent state machine handle concurrent tool executions? | [002-concurrent-tool-execution.md](discoveries/002-concurrent-tool-execution.md) | 2 | Complete |
+| 3 | What is the complete request flow from user input through the LLM proxy to tool execution and back? | [003-request-flow.md](discoveries/003-request-flow.md) | 2 | Complete |
 
 ---
 
