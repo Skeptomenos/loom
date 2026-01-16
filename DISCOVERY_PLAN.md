@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 35 | 22 | 13 | 63% |
-| **Total** | **93** | **23** | **70** | **25%** |
+| Follow-ups | 35 | 23 | 12 | 66% |
+| **Total** | **93** | **24** | **69** | **26%** |
 
 ---
 
@@ -169,7 +169,7 @@ The non-obvious things that only experience reveals.
 - [x] Should the CLI parse the JSON error response to extract and display just the `message` field for cleaner user output?
 - [x] Would adding a `LlmError::ProviderNotConfigured` variant improve error handling and enable provider-specific guidance in the CLI?
 - [x] Should the CLI query `/health` on startup to validate provider availability before attempting LLM requests?
-- [ ] Would a dedicated `/api/llm/capabilities` endpoint be valuable for exposing model lists, default mappings, and provider-specific features?
+- [x] Would a dedicated `/api/llm/capabilities` endpoint be valuable for exposing model lists, default mappings, and provider-specific features?
 - [ ] What is the expected user experience during a retry wait? Should the CLI show a spinner or countdown?
 - [ ] What trait bounds should `AgentRuntime` require for maximum flexibility while maintaining type safety?
 - [ ] Should the runtime be generic over the progress/callback mechanism, or use a fixed trait like `AgentRuntimeCallbacks`?
@@ -183,6 +183,7 @@ The non-obvious things that only experience reveals.
 - [ ] Should there be additional classification methods like `is_network_bound()` to enable smarter execution strategies?
 - [ ] Should the `error` code field be included in the displayed message for certain error types (e.g., "conflict: Version mismatch...")?
 - [ ] Should the CLI implement a shared `parse_error_response()` helper function for use across WeaverClient, ProxyLlmClient, and future HTTP clients?
+- [ ] Should the capabilities endpoint require authentication, or be public like `/health`?
 
 ---
 
@@ -216,6 +217,7 @@ The non-obvious things that only experience reveals.
 | 21 | Should the CLI parse the JSON error response to extract and display just the message field? | [021-cli-json-error-parsing.md](discoveries/021-cli-json-error-parsing.md) | 2 | Complete |
 | 22 | Would adding a `LlmError::ProviderNotConfigured` variant improve error handling? | [022-llmerror-provider-not-configured-variant.md](discoveries/022-llmerror-provider-not-configured-variant.md) | 2 | Complete |
 | 23 | Should the CLI query `/health` on startup to validate provider availability? | [023-cli-health-check-on-startup.md](discoveries/023-cli-health-check-on-startup.md) | 2 | Complete |
+| 24 | Would a dedicated `/api/llm/capabilities` endpoint be valuable? | [024-llm-capabilities-endpoint-value.md](discoveries/024-llm-capabilities-endpoint-value.md) | 1 | Complete |
 
 ---
 
