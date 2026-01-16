@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 27 | 16 | 11 | 59% |
-| **Total** | **85** | **17** | **68** | **20%** |
+| Follow-ups | 29 | 17 | 12 | 59% |
+| **Total** | **87** | **18** | **69** | **21%** |
 
 ---
 
@@ -163,7 +163,7 @@ The non-obvious things that only experience reveals.
 - [x] Should the CLI and ACP agent be updated to implement the retry timer, or is the current behavior (immediate failure/logging) intentional?
 - [x] Would a shared "Agent runtime" abstraction be useful to encapsulate the retry timer logic for reuse across CLI, ACP, and future consumers?
 - [x] Should the server return 429 instead of 503 for rate-limited responses to maintain semantic correctness?
-- [ ] Should the Retry-After header be added to the HTTP response in addition to the message body?
+- [x] Should the Retry-After header be added to the HTTP response in addition to the message body?
 - [ ] What would be the implementation complexity of adding parallel execution for read-only tool batches to the CLI?
 - [ ] Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait for explicit classification?
 - [ ] Should the CLI parse the JSON error response to extract and display just the `message` field for cleaner user output?
@@ -175,6 +175,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should the runtime be generic over the progress/callback mechanism, or use a fixed trait like `AgentRuntimeCallbacks`?
 - [ ] What is the implementation complexity of adding a `ServerError::RateLimited` variant with `Retry-After` header support?
 - [ ] Should the `Retry-After` header use seconds (integer) or HTTP-date format for maximum compatibility?
+- [ ] Should the ErrorResponse struct be extended with an optional `retry_after_secs` field for explicit machine-readable retry timing in the body?
+- [ ] Should jitter be added to Retry-After values to prevent thundering herd retries?
 
 ---
 
@@ -202,6 +204,7 @@ The non-obvious things that only experience reveals.
 | 15 | Should the CLI and ACP agent be updated to implement the retry timer? | [015-cli-acp-retry-timer-intentionality.md](discoveries/015-cli-acp-retry-timer-intentionality.md) | 2 | Complete |
 | 16 | Would a shared "Agent runtime" abstraction be useful? | [016-shared-agent-runtime-analysis.md](discoveries/016-shared-agent-runtime-analysis.md) | 2 | Complete |
 | 17 | Should the server return 429 instead of 503 for rate-limited responses? | [017-http-429-vs-503-rate-limiting.md](discoveries/017-http-429-vs-503-rate-limiting.md) | 2 | Complete |
+| 18 | Should the Retry-After header be added to the HTTP response? | [018-retry-after-header-addition.md](discoveries/018-retry-after-header-addition.md) | 2 | Complete |
 
 ---
 
