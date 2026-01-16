@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 37 | 26 | 11 | 70% |
-| **Total** | **95** | **27** | **68** | **28%** |
+| Follow-ups | 39 | 27 | 12 | 69% |
+| **Total** | **97** | **28** | **69** | **29%** |
 
 ---
 
@@ -173,7 +173,7 @@ The non-obvious things that only experience reveals.
 - [x] What is the expected user experience during a retry wait? Should the CLI show a spinner or countdown?
 - [x] Should the CLI support cancelling a retry wait with Ctrl+C, or should it always complete the countdown?
 - [x] Should the TUI implement a dedicated `CountdownWidget` or extend the existing `Spinner` to support countdown mode?
-- [ ] What trait bounds should `AgentRuntime` require for maximum flexibility while maintaining type safety?
+- [x] What trait bounds should `AgentRuntime` require for maximum flexibility while maintaining type safety?
 - [ ] Should the runtime be generic over the progress/callback mechanism, or use a fixed trait like `AgentRuntimeCallbacks`?
 - [ ] What is the implementation complexity of adding a `ServerError::RateLimited` variant with `Retry-After` header support?
 - [ ] Should the `Retry-After` header use seconds (integer) or HTTP-date format for maximum compatibility?
@@ -186,6 +186,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should the `error` code field be included in the displayed message for certain error types (e.g., "conflict: Version mismatch...")?
 - [ ] Should the CLI implement a shared `parse_error_response()` helper function for use across WeaverClient, ProxyLlmClient, and future HTTP clients?
 - [ ] Should the capabilities endpoint require authentication, or be public like `/health`?
+- [ ] Should `AgentRuntimeCallbacks` be split into separate traits (e.g., `LlmCallbacks`, `ToolCallbacks`) for finer-grained implementation?
+- [ ] Should the runtime accept a `CancellationToken` for graceful shutdown, or use a different cancellation mechanism?
 
 ---
 
@@ -223,6 +225,7 @@ The non-obvious things that only experience reveals.
 | 25 | What is the expected user experience during a retry wait? | [025-cli-retry-wait-ux.md](discoveries/025-cli-retry-wait-ux.md) | 2 | Complete |
 | 26 | Should the CLI support cancelling a retry wait with Ctrl+C? | [026-cli-retry-wait-cancellation.md](discoveries/026-cli-retry-wait-cancellation.md) | 0 | Complete |
 | 27 | Should the TUI implement a dedicated `CountdownWidget` or extend the existing `Spinner`? | [027-tui-countdown-widget-vs-spinner-extension.md](discoveries/027-tui-countdown-widget-vs-spinner-extension.md) | 0 | Complete |
+| 28 | What trait bounds should `AgentRuntime` require for maximum flexibility? | [028-agent-runtime-trait-bounds.md](discoveries/028-agent-runtime-trait-bounds.md) | 2 | Complete |
 
 ---
 
