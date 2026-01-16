@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 35 | 23 | 12 | 66% |
-| **Total** | **93** | **24** | **69** | **26%** |
+| Follow-ups | 37 | 24 | 13 | 65% |
+| **Total** | **95** | **25** | **70** | **26%** |
 
 ---
 
@@ -170,7 +170,9 @@ The non-obvious things that only experience reveals.
 - [x] Would adding a `LlmError::ProviderNotConfigured` variant improve error handling and enable provider-specific guidance in the CLI?
 - [x] Should the CLI query `/health` on startup to validate provider availability before attempting LLM requests?
 - [x] Would a dedicated `/api/llm/capabilities` endpoint be valuable for exposing model lists, default mappings, and provider-specific features?
-- [ ] What is the expected user experience during a retry wait? Should the CLI show a spinner or countdown?
+- [x] What is the expected user experience during a retry wait? Should the CLI show a spinner or countdown?
+- [ ] Should the CLI support cancelling a retry wait with Ctrl+C, or should it always complete the countdown?
+- [ ] Should the TUI implement a dedicated `CountdownWidget` or extend the existing `Spinner` to support countdown mode?
 - [ ] What trait bounds should `AgentRuntime` require for maximum flexibility while maintaining type safety?
 - [ ] Should the runtime be generic over the progress/callback mechanism, or use a fixed trait like `AgentRuntimeCallbacks`?
 - [ ] What is the implementation complexity of adding a `ServerError::RateLimited` variant with `Retry-After` header support?
@@ -218,6 +220,7 @@ The non-obvious things that only experience reveals.
 | 22 | Would adding a `LlmError::ProviderNotConfigured` variant improve error handling? | [022-llmerror-provider-not-configured-variant.md](discoveries/022-llmerror-provider-not-configured-variant.md) | 2 | Complete |
 | 23 | Should the CLI query `/health` on startup to validate provider availability? | [023-cli-health-check-on-startup.md](discoveries/023-cli-health-check-on-startup.md) | 2 | Complete |
 | 24 | Would a dedicated `/api/llm/capabilities` endpoint be valuable? | [024-llm-capabilities-endpoint-value.md](discoveries/024-llm-capabilities-endpoint-value.md) | 1 | Complete |
+| 25 | What is the expected user experience during a retry wait? | [025-cli-retry-wait-ux.md](discoveries/025-cli-retry-wait-ux.md) | 2 | Complete |
 
 ---
 
