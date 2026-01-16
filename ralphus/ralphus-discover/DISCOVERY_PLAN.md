@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 20 | 10 | 10 | 50% |
-| **Total** | **62** | **11** | **51** | **18%** |
+| Follow-ups | 22 | 11 | 11 | 50% |
+| **Total** | **64** | **12** | **52** | **19%** |
 
 ---
 
@@ -100,7 +100,7 @@ The non-obvious things that only experience reveals.
 - [x] How is the OAuth state store implemented for CSRF protection?
 - [x] How does the impersonation system work end-to-end?
 - [x] How does the OAuth system prompt requirement work for Claude Max?
-- [ ] How are streaming responses handled when errors occur mid-stream?
+- [x] How are streaming responses handled when errors occur mid-stream?
 - [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
 - [ ] What is the thread system and how does it persist conversations?
 - [ ] How does path validation prevent traversal attacks? (canonicalization, prefix checking)
@@ -108,6 +108,8 @@ The non-obvious things that only experience reveals.
 - [ ] How does the session management differ from OAuth state (persistence, expiry, revocation)?
 - [ ] How does impersonation affect API key authentication vs session authentication?
 - [ ] How does the ABAC engine handle impersonation for organization/team-level permissions?
+- [ ] How does the retry backoff timing work for streaming errors? (exponential backoff, jitter?)
+- [ ] How does the feature flag SSE client handle reconnection after errors?
 
 ---
 
@@ -129,6 +131,7 @@ The non-obvious things that only experience reveals.
 | 9 | How is the OAuth state store implemented for CSRF protection? | 009-oauth-state-store-csrf.md | 2 | Done |
 | 10 | How does the impersonation system work end-to-end? | 010-impersonation-system.md | 2 | Done |
 | 11 | How does the OAuth system prompt requirement work for Claude Max? | 011-oauth-system-prompt-requirement.md | 2 | Done |
+| 12 | How are streaming responses handled when errors occur mid-stream? | 012-streaming-error-handling.md | 2 | Done |
 
 ---
 
