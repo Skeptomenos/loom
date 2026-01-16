@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 51 | 35 | 16 | 69% |
-| **Total** | **109** | **36** | **73** | **33%** |
+| Follow-ups | 51 | 36 | 15 | 71% |
+| **Total** | **109** | **37** | **72** | **34%** |
 
 ---
 
@@ -182,7 +182,7 @@ The non-obvious things that only experience reveals.
 - [x] Should the parallel execution logic be extracted into a shared crate (e.g., `loom-cli-tools` or a new `loom-tool-executor`)?
 - [x] Should parallel execution be gated behind a feature flag or CLI option for gradual rollout?
 - [x] Should `ToolDefinition` be extended to include an `is_mutating` field so the LLM can be informed of tool characteristics?
-- [ ] Should there be additional classification methods like `is_network_bound()` to enable smarter execution strategies?
+- [x] Should there be additional classification methods like `is_network_bound()` to enable smarter execution strategies?
 - [ ] Should the `error` code field be included in the displayed message for certain error types (e.g., "conflict: Version mismatch...")?
 - [ ] Should the CLI implement a shared `parse_error_response()` helper function for use across WeaverClient, ProxyLlmClient, and future HTTP clients?
 - [ ] Should the capabilities endpoint require authentication, or be public like `/health`?
@@ -248,6 +248,7 @@ The non-obvious things that only experience reveals.
 | 34 | Should the parallel execution logic be extracted into a shared crate? | [034-parallel-execution-shared-crate.md](discoveries/034-parallel-execution-shared-crate.md) | 2 | Complete |
 | 35 | Should parallel execution be gated behind a feature flag or CLI option? | [035-parallel-execution-feature-flag.md](discoveries/035-parallel-execution-feature-flag.md) | 2 | Complete |
 | 36 | Should `ToolDefinition` be extended to include an `is_mutating` field? | [036-tooldefinition-is-mutating-field.md](discoveries/036-tooldefinition-is-mutating-field.md) | 0 | Complete |
+| 37 | Should there be additional classification methods like `is_network_bound()`? | [037-is-network-bound-classification-method.md](discoveries/037-is-network-bound-classification-method.md) | 0 | Complete |
 
 ---
 
