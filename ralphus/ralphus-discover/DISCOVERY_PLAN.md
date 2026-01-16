@@ -12,8 +12,8 @@
 | Conventions | 9 | 0 | 9 | 0% |
 | Data Flow | 8 | 0 | 8 | 0% |
 | Tricks & Quirks | 9 | 0 | 9 | 0% |
-| Follow-ups | 4 | 1 | 3 | 25% |
-| **Total** | **46** | **2** | **44** | **4%** |
+| Follow-ups | 6 | 2 | 4 | 33% |
+| **Total** | **48** | **3** | **45** | **6%** |
 
 ---
 
@@ -91,9 +91,11 @@ The non-obvious things that only experience reveals.
 <!-- Each discovery should add 1-2 follow-ups here -->
 
 - [x] How does the state machine orchestrate conversation flow and tool execution?
-- [ ] What is the relationship between loom-core, loom-server, and loom-cli?
+- [x] What is the relationship between loom-core, loom-server, and loom-cli?
 - [ ] How does the tool execution system work? (ToolExecutionStatus lifecycle, parallel execution)
 - [ ] How is the retry mechanism implemented for LLM errors?
+- [ ] How does the LLM proxy pattern work in detail? (ProxyLlmClient, SSE streaming)
+- [ ] What is the thread system and how does it persist conversations?
 
 ---
 
@@ -106,6 +108,7 @@ The non-obvious things that only experience reveals.
 |---|----------|----------------|------------|--------|
 | 1 | What is the primary purpose of this codebase? | 001-primary-purpose.md | 2 | Done |
 | 2 | How does the state machine orchestrate conversation flow and tool execution? | 002-state-machine-orchestration.md | 2 | Done |
+| 3 | What is the relationship between loom-core, loom-server, and loom-cli? | 003-crate-relationships.md | 2 | Done |
 
 ---
 
