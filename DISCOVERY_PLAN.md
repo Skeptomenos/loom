@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 8 | 3 | 5 | 38% |
-| **Total** | **66** | **4** | **62** | **6%** |
+| Follow-ups | 8 | 4 | 4 | 50% |
+| **Total** | **66** | **5** | **61** | **8%** |
 
 ---
 
@@ -150,7 +150,7 @@ The non-obvious things that only experience reveals.
 - [x] How does the Agent state machine handle concurrent tool executions and what happens when multiple tools are called in parallel?
 - [x] What is the complete request flow from user input through the LLM proxy to tool execution and back?
 - [x] Why was sequential execution chosen over parallel in the CLI implementations? Are there specific race conditions or ordering concerns with file-modifying tools?
-- [ ] How does the PostToolsHook auto-commit feature work, and what determines if a commit should be made?
+- [x] How does the PostToolsHook auto-commit feature work, and what determines if a commit should be made?
 - [ ] How does the LlmService handle model resolution (e.g., mapping "default" to specific model versions) and what happens when a model is not available?
 - [ ] How does the SSE error handling work when the connection drops mid-stream, and how does the client recover?
 - [ ] What would be the performance impact of adding advisory file locks (flock) to edit_file and bash tools?
@@ -169,6 +169,7 @@ The non-obvious things that only experience reveals.
 | 2 | How does the Agent state machine handle concurrent tool executions? | [002-concurrent-tool-execution.md](discoveries/002-concurrent-tool-execution.md) | 2 | Complete |
 | 3 | What is the complete request flow from user input through the LLM proxy to tool execution and back? | [003-request-flow.md](discoveries/003-request-flow.md) | 2 | Complete |
 | 4 | Why was sequential execution chosen over parallel in the CLI implementations? | [004-sequential-execution-rationale.md](discoveries/004-sequential-execution-rationale.md) | 2 | Complete |
+| 5 | How does the PostToolsHook auto-commit feature work? | [005-post-tools-hook-auto-commit.md](discoveries/005-post-tools-hook-auto-commit.md) | 2 | Complete |
 
 ---
 
