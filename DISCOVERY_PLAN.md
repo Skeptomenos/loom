@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 35 | 20 | 15 | 57% |
-| **Total** | **93** | **21** | **72** | **23%** |
+| Follow-ups | 35 | 21 | 14 | 60% |
+| **Total** | **93** | **22** | **71** | **24%** |
 
 ---
 
@@ -167,7 +167,7 @@ The non-obvious things that only experience reveals.
 - [x] What would be the implementation complexity of adding parallel execution for read-only tool batches to the CLI?
 - [x] Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait for explicit classification?
 - [x] Should the CLI parse the JSON error response to extract and display just the `message` field for cleaner user output?
-- [ ] Would adding a `LlmError::ProviderNotConfigured` variant improve error handling and enable provider-specific guidance in the CLI?
+- [x] Would adding a `LlmError::ProviderNotConfigured` variant improve error handling and enable provider-specific guidance in the CLI?
 - [ ] Should the CLI query `/health` on startup to validate provider availability before attempting LLM requests?
 - [ ] Would a dedicated `/api/llm/capabilities` endpoint be valuable for exposing model lists, default mappings, and provider-specific features?
 - [ ] What is the expected user experience during a retry wait? Should the CLI show a spinner or countdown?
@@ -214,6 +214,7 @@ The non-obvious things that only experience reveals.
 | 19 | What would be the implementation complexity of adding parallel execution for read-only tool batches to the CLI? | [019-parallel-read-only-tool-implementation-complexity.md](discoveries/019-parallel-read-only-tool-implementation-complexity.md) | 2 | Complete |
 | 20 | Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait? | [020-tool-trait-is-mutating-method.md](discoveries/020-tool-trait-is-mutating-method.md) | 2 | Complete |
 | 21 | Should the CLI parse the JSON error response to extract and display just the message field? | [021-cli-json-error-parsing.md](discoveries/021-cli-json-error-parsing.md) | 2 | Complete |
+| 22 | Would adding a `LlmError::ProviderNotConfigured` variant improve error handling? | [022-llmerror-provider-not-configured-variant.md](discoveries/022-llmerror-provider-not-configured-variant.md) | 2 | Complete |
 
 ---
 
