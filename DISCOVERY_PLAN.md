@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 16 | 9 | 7 | 56% |
-| **Total** | **74** | **10** | **64** | **14%** |
+| Follow-ups | 18 | 10 | 8 | 56% |
+| **Total** | **76** | **11** | **65** | **14%** |
 
 ---
 
@@ -156,7 +156,7 @@ The non-obvious things that only experience reveals.
 - [x] How does the Agent determine the retry delay (what triggers RetryTimeoutFired), and is there exponential backoff at the agent level?
 - [x] Could the ProxyLlmClient be enhanced to parse the Retry-After header for rate-limited responses to enable smarter retry timing?
 - [x] What would be the performance impact of adding advisory file locks (flock) to edit_file and bash tools?
-- [ ] Are there any read-only tools that could be safely parallelized without any changes?
+- [x] Are there any read-only tools that could be safely parallelized without any changes?
 - [ ] Should a WorkspaceLockManager be implemented as a prerequisite for parallel tool execution?
 - [ ] How does the CLI's ProxyLlmClient handle the 503 "provider not configured" error, and does it provide helpful user feedback?
 - [ ] Is there a mechanism for clients to discover which providers/models are available on a given server?
@@ -164,6 +164,8 @@ The non-obvious things that only experience reveals.
 - [ ] Would a shared "Agent runtime" abstraction be useful to encapsulate the retry timer logic for reuse across CLI, ACP, and future consumers?
 - [ ] Should the server return 429 instead of 503 for rate-limited responses to maintain semantic correctness?
 - [ ] Should the Retry-After header be added to the HTTP response in addition to the message body?
+- [ ] What would be the implementation complexity of adding parallel execution for read-only tool batches to the CLI?
+- [ ] Should a `is_read_only()` or `is_mutating()` method be added to the Tool trait for explicit classification?
 
 ---
 
@@ -184,6 +186,7 @@ The non-obvious things that only experience reveals.
 | 8 | How does the Agent determine the retry delay (what triggers RetryTimeoutFired)? | [008-retry-timeout-mechanism.md](discoveries/008-retry-timeout-mechanism.md) | 2 | Complete |
 | 9 | Could the ProxyLlmClient be enhanced to parse the Retry-After header? | [009-proxy-llm-client-retry-after.md](discoveries/009-proxy-llm-client-retry-after.md) | 2 | Complete |
 | 10 | What would be the performance impact of adding advisory file locks (flock) to edit_file and bash tools? | [010-flock-performance-impact.md](discoveries/010-flock-performance-impact.md) | 2 | Complete |
+| 11 | Are there any read-only tools that could be safely parallelized without any changes? | [011-read-only-tools-parallelization.md](discoveries/011-read-only-tools-parallelization.md) | 2 | Complete |
 
 ---
 
