@@ -12,8 +12,8 @@
 | Conventions | 10 | 0 | 10 | 0% |
 | Data Flow | 12 | 0 | 12 | 0% |
 | Tricks & Quirks | 10 | 0 | 10 | 0% |
-| Follow-ups | 49 | 32 | 17 | 65% |
-| **Total** | **107** | **33** | **74** | **31%** |
+| Follow-ups | 49 | 33 | 16 | 67% |
+| **Total** | **107** | **34** | **73** | **32%** |
 
 ---
 
@@ -179,7 +179,7 @@ The non-obvious things that only experience reveals.
 - [x] Should the `Retry-After` header use seconds (integer) or HTTP-date format for maximum compatibility?
 - [x] Should the ErrorResponse struct be extended with an optional `retry_after_secs` field for explicit machine-readable retry timing in the body?
 - [x] Should jitter be added to Retry-After values to prevent thundering herd retries?
-- [ ] Should the parallel execution logic be extracted into a shared crate (e.g., `loom-cli-tools` or a new `loom-tool-executor`)?
+- [x] Should the parallel execution logic be extracted into a shared crate (e.g., `loom-cli-tools` or a new `loom-tool-executor`)?
 - [ ] Should parallel execution be gated behind a feature flag or CLI option for gradual rollout?
 - [ ] Should `ToolDefinition` be extended to include an `is_mutating` field so the LLM can be informed of tool characteristics?
 - [ ] Should there be additional classification methods like `is_network_bound()` to enable smarter execution strategies?
@@ -198,6 +198,8 @@ The non-obvious things that only experience reveals.
 - [ ] Should clients implement a fallback strategy that checks the JSON body's `retry_after_secs` when the `Retry-After` header is missing?
 - [ ] Should the job scheduler (`loom-server-jobs`) and webhook retry logic add jitter to their exponential backoff for consistency?
 - [ ] Should server-side jitter use a configurable range (e.g., via environment variable) or a fixed ±15% factor?
+- [ ] Should the `ToolExecutor` support configurable concurrency limits (e.g., max 4 parallel read-only tools) to prevent resource exhaustion?
+- [ ] Should execution metrics (timing, success/failure counts) be collected at the executor level for observability?
 
 ---
 
@@ -241,6 +243,7 @@ The non-obvious things that only experience reveals.
 | 31 | Should the Retry-After header use seconds or HTTP-date format? | [031-retry-after-header-format.md](discoveries/031-retry-after-header-format.md) | 2 | Complete |
 | 32 | Should ErrorResponse be extended with retry_after_secs field? | [032-errorresponse-retry-after-field.md](discoveries/032-errorresponse-retry-after-field.md) | 2 | Complete |
 | 33 | Should jitter be added to Retry-After values to prevent thundering herd retries? | [033-jitter-for-retry-after-values.md](discoveries/033-jitter-for-retry-after-values.md) | 2 | Complete |
+| 34 | Should the parallel execution logic be extracted into a shared crate? | [034-parallel-execution-shared-crate.md](discoveries/034-parallel-execution-shared-crate.md) | 2 | Complete |
 
 ---
 
